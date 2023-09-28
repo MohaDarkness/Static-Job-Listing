@@ -33,7 +33,6 @@ document.querySelector(".clear-button").addEventListener("click", () => {
   localStorage.filteredData = JSON.stringify(new Array());
   document.querySelector(".labels-selected").innerHTML = "";
   renderPosts();
-  hideLabelsSection();
 });
 
 /* ADD/REMOVE LABEL */
@@ -56,7 +55,6 @@ const removeLabel = (event) => {
   const labels = JSON.parse(localStorage.filteredData);
   const index = labels.indexOf(labelName.toLowerCase());
   if (index >= 0) labels.splice(index, 1);
-  if (labels.length === 0) hideLabelsSection();
   localStorage.filteredData = JSON.stringify(labels);
 
   renderPosts();
@@ -80,16 +78,5 @@ const displayJobs = (jobPosts) => {
 
 // display label
 const displayLabel = (label) => {
-  displayLabelsSection();
   document.querySelector(".labels-selected").appendChild(label);
-};
-
-//display labels section
-const displayLabelsSection = () => {
-  document.querySelector(".search-bar-section").classList.remove("hidden");
-};
-
-// hide labels section
-const hideLabelsSection = () => {
-  document.querySelector(".search-bar-section").classList.add("hidden");
 };
