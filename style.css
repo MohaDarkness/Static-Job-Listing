@@ -198,6 +198,17 @@ body > .container:first-of-type {
   background-color: hsl(180, 29%, 50%);
 }
 
+#no-data-found-div {
+  text-align: center;
+  background: -webkit-linear-gradient(hsl(180, 29%, 50%), hsl(180, 3%, 55%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#no-data-found-div > * {
+  text-shadow: 0px 12px 9px rgba(36, 82, 18, 0.71);
+}
+
 @media screen and (max-width: 1150px) {
   .job-info-section {
     flex-basis: 80%;

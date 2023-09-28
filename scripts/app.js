@@ -63,6 +63,9 @@ const removeLabel = (event) => {
 const renderPosts = async () => {
   const postsData = await getPostsData();
   const filteredData = filterJobs(postsData);
+  if (filteredData.length === 0) displayNoData();
+  else hideNoData();
+
   const jobsPosts = filteredData.map((postData) =>
     createPost(postData, labelListener)
   );
@@ -79,4 +82,13 @@ const displayJobs = (jobPosts) => {
 // display label
 const displayLabel = (label) => {
   document.querySelector(".labels-selected").appendChild(label);
+};
+
+//
+const displayNoData = () => {
+  document.querySelector("#no-data-found-div").classList.remove("hidden");
+};
+
+const hideNoData = () => {
+  document.querySelector("#no-data-found-div").classList.add("hidden");
 };
