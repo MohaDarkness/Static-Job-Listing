@@ -161,6 +161,7 @@ body > .container:first-of-type {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 5px;
   color: hsl(180, 8%, 52%);
 }
 

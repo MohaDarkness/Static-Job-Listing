@@ -7,8 +7,8 @@ export const filterJobs = (allJobPostsData) => {
   const filteredJobPosts = allJobPostsData.filter((jobPostData) => {
     if (takeAllJobs) return true;
 
-    const { role, level, languages } = jobPostData;
-    const thisJobLabels = [role, level, ...languages].map((element) =>
+    const { role, level, languages, tools } = jobPostData;
+    const thisJobLabels = [role, level, ...languages, ...tools].map((element) =>
       element.toLowerCase()
     );
 

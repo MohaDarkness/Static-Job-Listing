@@ -112,8 +112,8 @@ export const createPost = (postData, labelListener) => {
 
   // Create label spans
   // const labelSpans = ["Frontend", "Senior", "HTML", "CSS", "JavaScript"];
-  const { role, level, languages } = postData;
-  const labelSpans = [role, level, ...languages];
+  const { role, level, languages, tools } = postData;
+  const labelSpans = [role, level, ...languages, ...tools];
 
   for (const labelText of labelSpans) {
     const label = document.createElement("p");
